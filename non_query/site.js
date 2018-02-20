@@ -44,3 +44,14 @@ function newElement() {
     }
   }
 }
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+function deleteAll() {
+	var elements = document.getElementsByTagName("LI");
+	for(i=0;i<elements.length;i++){
+		if (hasClass(elements[i],'checked')) {
+			elements[i].style.display = "none";
+		}
+	}
+}

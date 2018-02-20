@@ -129,3 +129,6 @@ input {
 #select button:hover {
     background-color: #f44336;
 }
+#select button:first-child {
+    float: left;
+}

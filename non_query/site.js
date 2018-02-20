@@ -55,3 +55,12 @@ function deleteAll() {
 		}
 	}
 }
+
+function selectAll(){
+	var list = document.getElementsByTagName("LI");
+	for(i=0;i<list.length;i++){
+		if(!hasClass(list[i],'checked')){
+			list[i].className = "checked";
+		}
+	}
+}

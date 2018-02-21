@@ -28,7 +28,9 @@ ul li {
     -ms-user-select: none;
     user-select: none;
 }
-
+ul li p{
+    margin: 0;
+}
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
     background: #f9f9f9;
@@ -59,7 +61,10 @@ ul li.checked::before {
     height: 15px;
     width: 7px;
 }
-
+/*ul li:last-child{
+    padding: 0;
+}
+*/
 /* Style the close button */
 .close {
     position: absolute;
@@ -131,4 +136,11 @@ input {
 }
 #select button:first-child {
     float: left;
+}
+.fix{
+    height: 40px;
+}
+.fix input {
+    height: 40px;
+    width: 100%;
 }

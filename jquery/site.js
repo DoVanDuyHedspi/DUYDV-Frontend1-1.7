@@ -23,8 +23,29 @@ $(document).ready(function(){
 	$(document).on('click',"#myUL li",function(){
 		$(this).toggleClass('checked');
 	})
+	$(document).on('dblclick',"#myUL li",function(){
+		var text = $(this).find('p').text();
+		
+		$(this).before('<div class="fix"><input type="text" id="fixInput" value="'+text+'"></div>');
+		$(this).remove();
+		$("#fixInput").focus();
+		$("#fixInput").blur(function(event) {
+			var txt = $('#fixInput').val();
+			$("#fixInput").before('<li><p>'+txt+'</p><span class="close">x</span></li>');
+			$("#fixInput").remove();
+		});
+		$("#fixInput").keyup(function(event) {
+		if(event.keyCode == 13){
+			var txt = $('#fixInput').val();
+			$(this).parent().before('<li><p>'+txt+'</p><span class="close">x</span></li>');
+			$(this).parent().remove();
+
+		}
+	});
+	})
 	$(document).on('click',"#clearCompleted",clearCompleted);
 	$("#completedAll").click(function(){
 		$('#myUL li').addClass('checked');
 	})
+
 });

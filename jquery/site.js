@@ -1,7 +1,13 @@
 function addListItem(){
 	var text=$('#myInput').val();
-	$('#myUL').append('<li>'+text+'<span class="close">x</span></li>');
-	$('#myInput').val('');
+	if(text == ''){
+		alert('you must write something!');
+	}
+	else {
+		$('#myUL').append('<li>'+text+'<span class="close">x</span></li>');
+		$('#myInput').val('');
+	}
+	
 }
 
 
